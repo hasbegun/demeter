@@ -1,0 +1,154 @@
+{
+  "project_info": {
+    "project_number": "174841766591",
+    "project_id": "innoxdev",
+    "storage_bucket": "innoxdev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174841766591:android:52eec94733290abdbe1c0a",
+        "android_client_info": {
+          "package_name": "dev.innox.authexample2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174841766591-e7mgr28ig7e781101uha89auqchinjee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgK4fVGH-nVgvh2pzB7CvoIT9o0aiPxko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174841766591-dvol8pftdn240i2429dp9us0sd75lc1j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174841766591-2pknm9hqg4o0umh2c15ar53ipiaps73s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.innox.cronus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174841766591:android:fe103e7279f4a31abe1c0a",
+        "android_client_info": {
+          "package_name": "dev.innox.cronus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174841766591-e7mgr28ig7e781101uha89auqchinjee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgK4fVGH-nVgvh2pzB7CvoIT9o0aiPxko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174841766591-dvol8pftdn240i2429dp9us0sd75lc1j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174841766591-2pknm9hqg4o0umh2c15ar53ipiaps73s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.innox.cronus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174841766591:android:725b2d54ce1d087bbe1c0a",
+        "android_client_info": {
+          "package_name": "dev.innox.demeter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174841766591-e7mgr28ig7e781101uha89auqchinjee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgK4fVGH-nVgvh2pzB7CvoIT9o0aiPxko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174841766591-dvol8pftdn240i2429dp9us0sd75lc1j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174841766591-2pknm9hqg4o0umh2c15ar53ipiaps73s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.innox.cronus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174841766591:android:09947c2f5e21e258be1c0a",
+        "android_client_info": {
+          "package_name": "dev.innox.firebase_ui_ex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174841766591-e7mgr28ig7e781101uha89auqchinjee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgK4fVGH-nVgvh2pzB7CvoIT9o0aiPxko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174841766591-dvol8pftdn240i2429dp9us0sd75lc1j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174841766591-2pknm9hqg4o0umh2c15ar53ipiaps73s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.innox.cronus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
