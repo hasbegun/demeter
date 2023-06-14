@@ -40,14 +40,14 @@ class _CustomInputFieldState extends State<CustomInputField> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.9,
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 3.0),
       child: Column(
         children: [
           Align(
             alignment: Alignment.centerLeft,
             child: Text(widget.labelText,
-              style: const TextStyle(fontSize: 18,
-                  fontWeight: FontWeight.bold),),
+              style: const TextStyle(fontSize: 18.0,
+                fontWeight: FontWeight.bold),),
           ),
           TextFormField(
             controller: widget.controller,

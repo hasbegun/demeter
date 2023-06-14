@@ -2,17 +2,18 @@ import 'dart:io';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:image_picker/image_picker.dart';
 import '../components/common/custom_divider.dart';
 import '../components/common/custom_form_button.dart';
 import '../components/common/custom_input_field.dart';
 import '../components/common/page_heading.dart';
+import '../components/common/dropdown_button.dart';
 import '../services/auth_services.dart';
 import '../utils/helper_functions.dart';
 import 'login_page.dart';
 import 'profile_page.dart';
+
+// TODO: enable the import MOB-10
+// import 'package:image_picker/image_picker.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -22,25 +23,28 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  File? _profileImage;
-  final _signupFormKey = GlobalKey<FormState>();
+  // TODO: enable this line MOB-10
+  // File? _profileImage;
 
+  final _signupFormKey = GlobalKey<FormState>();
   final TextEditingController nameController= TextEditingController();
   final TextEditingController contactController= TextEditingController();
   final TextEditingController emailController= TextEditingController();
   final TextEditingController passwdController= TextEditingController();
+  final TextEditingController confirmPasswdController= TextEditingController();
 
-  Future _pickProfileImage() async {
-    try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if(image == null) return;
-
-      final imageTemporary = File(image.path);
-      setState(() => _profileImage = imageTemporary);
-    } on PlatformException catch (e) {
-      debugPrint('Failed to pick image error: $e');
-    }
-  }
+  // TODO: Enable this section with MOB-10
+  // Future _pickProfileImage() async {
+  //   try {
+  //     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+  //     if(image == null) return;
+  //
+  //     final imageTemporary = File(image.path);
+  //     setState(() => _profileImage = imageTemporary);
+  //   } on PlatformException catch (e) {
+  //     debugPrint('Failed to pick image error: $e');
+  //   }
+  // }
 
   @override
   void dispose() {
@@ -48,6 +52,7 @@ class _SignupPageState extends State<SignupPage> {
     contactController.dispose();
     emailController.dispose();
     passwdController.dispose();
+    confirmPasswdController.dispose();
     super.dispose();
   }
 
@@ -113,6 +118,28 @@ class _SignupPageState extends State<SignupPage> {
           },
           suffixIcon: true,
         ),
+        const SizedBox(height: 16,),
+        CustomInputField(
+          controller: confirmPasswdController,
+          labelText: 'Confirm Password',
+          hintText: 'Confirm the password',
+          isDense: true,
+          obscureText: true,
+          validator: (textValue) {
+            if(textValue == null || textValue.isEmpty) {
+              return 'Confirm password is required!';
+            } else if(textValue != passwdController.text) {
+              return 'The password does not match.';
+            }
+            return null;
+          },
+          suffixIcon: true,
+        ),
+        // role
+        // const SizedBox(height: 16,),
+        // const CustomDropdownButton(
+        //   labelText: 'Role',
+        // ),
       ],
     );
   }
@@ -127,8 +154,8 @@ class _SignupPageState extends State<SignupPage> {
             onTap: () async {
               try {
                 // google sign is static method
-                final UserCredential credential = await FireAuth
-                    .signInWithGoogle();
+                final UserCredential credential =
+                  await FireAuth.signInWithGoogle();
               } catch (_) {}
             },
             child: Image.asset('assets/images/google.png'),
@@ -151,7 +178,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xffEEF1F3),
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Form(
             key: _signupFormKey,
@@ -166,39 +193,40 @@ class _SignupPageState extends State<SignupPage> {
                   child: Column(
                     children: [
                       const PageHeading(title: 'Sign-up',),
-                      SizedBox(
-                        width: 130,
-                        height: 130,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey.shade200,
-                          backgroundImage: _profileImage != null ? FileImage(_profileImage!) : null,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                bottom: 5,
-                                right: 5,
-                                child: GestureDetector(
-                                  onTap: _pickProfileImage,
-                                  child: Container(
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue.shade400,
-                                      border: Border.all(color: Colors.white, width: 3),
-                                      borderRadius: BorderRadius.circular(25),
-                                    ),
-                                    child: const Icon(
-                                      Icons.camera_alt_sharp,
-                                      color: Colors.white,
-                                      size: 25,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      // TODO: JIRA MOB-9. However, this will be enable when it is ready: MOB-10
+                      // SizedBox(
+                      //   width: 130,
+                      //   height: 130,
+                      //   child: CircleAvatar(
+                      //     backgroundColor: Colors.grey.shade200,
+                      //     backgroundImage: _profileImage != null ? FileImage(_profileImage!) : null,
+                      //     child: Stack(
+                      //       children: [
+                      //         Positioned(
+                      //           bottom: 5,
+                      //           right: 5,
+                      //           child: GestureDetector(
+                      //             onTap: _pickProfileImage,
+                      //             child: Container(
+                      //               height: 50,
+                      //               width: 50,
+                      //               decoration: BoxDecoration(
+                      //                 color: Colors.blue.shade400,
+                      //                 border: Border.all(color: Colors.white, width: 3),
+                      //                 borderRadius: BorderRadius.circular(25),
+                      //               ),
+                      //               child: const Icon(
+                      //                 Icons.camera_alt_sharp,
+                      //                 color: Colors.white,
+                      //                 size: 25,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       const SizedBox(height: 16,),
                       inputFields(),
                       const SizedBox(height: 22,),
@@ -216,9 +244,9 @@ class _SignupPageState extends State<SignupPage> {
                           children: [
                             const Text('Already have an account ? ',
                               style: TextStyle(
-                                  fontSize: 13,
-                                  color: Color(0xff939393),
-                                  fontWeight: FontWeight.bold),),
+                                fontSize: 13,
+                                color: Color(0xff939393),
+                                fontWeight: FontWeight.bold),),
                             GestureDetector(
                               onTap: () => {
                                 Navigator.push(
@@ -248,39 +276,49 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   void _handleSignupUser() async {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(child: CircularProgressIndicator(),);
-      });
-
     // signup user
     if (_signupFormKey.currentState!.validate()) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(child: CircularProgressIndicator(),);
+        });
+
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Submitting data..')),
+        const SnackBar(content: Text('Register user... please wait')),
       );
 
       try {
-        // final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        //     email: emailController.text, password: passwdController.text);
         final User? user = await FireAuth().registerUsingEmailPassword(
             email: emailController.text, password: passwdController.text,
             name: nameController.text, contact: contactController.text);
         if (!context.mounted) return;
         Navigator.of(context).pop();
         if(user != null) {
-          print('User registered');
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('User registered.')),
+          );
+          if (!context.mounted) return;
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => ProfilePage(user: user)));
         }
       } on FirebaseAuthException catch(e) {
-        print(e.code);
+        // print(e.code);
+        if (!context.mounted) return;
+        Navigator.of(context).pop();  // pop spin dialog
         switch(e.code) {
           case 'email-already-in-use':
             showDialog(
               context: context,
               builder: (BuildContext context) =>
               const CustomDialog(message: 'The email address is already in used by another account'),
+            );
+            break;
+          case 'password-mismatch':
+            showDialog(
+              context: context,
+              builder: (BuildContext context) =>
+              const CustomDialog(message: 'Password does not match.'),
             );
             break;
           case 'too-many-requests':
