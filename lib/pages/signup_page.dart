@@ -303,7 +303,9 @@ class _SignupPageState extends State<SignupPage> {
             MaterialPageRoute(builder: (context) => ProfilePage(user: user)));
         }
       } on FirebaseAuthException catch(e) {
+        // debug only
         // print(e.code);
+        //////
         if (!context.mounted) return;
         Navigator.of(context).pop();  // pop spin dialog
         switch(e.code) {

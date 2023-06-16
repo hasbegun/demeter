@@ -160,6 +160,8 @@ class _LoginPageState extends State<LoginPage> {
             // MaterialPageRoute(builder: (context)=>ProfilePage(user: userCredential.user)));
         }
       } on FirebaseAuthException catch(e) {
+        if (!context.mounted) return;
+        Navigator.of(context).pop();
         switch(e.code) {
           case 'user-not-found':
           case 'wrong-password':
