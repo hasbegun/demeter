@@ -1,11 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
-import '../components/common/page_header.dart';
-import '../components/common/page_heading.dart';
-import '../pages/login_page.dart';
-import '../components/common/custom_input_field.dart';
-import '../components/common/custom_form_button.dart';
+import 'package:demeter/components/common/page_header.dart';
+import 'package:demeter/components/common/page_heading.dart';
+import 'package:demeter/pages/login_page.dart';
+import 'package:demeter/components/common/custom_input_field.dart';
+import 'package:demeter/components/common/custom_form_button.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({Key? key}) : super(key: key);

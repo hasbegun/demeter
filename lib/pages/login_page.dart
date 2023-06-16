@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../components/common/custom_form_button.dart';
-import '../components/common/custom_input_field.dart';
-import '../components/common/page_header.dart';
-import '../components/common/page_heading.dart';
-import '../services/auth_services.dart';
-import '../utils/helper_functions.dart';
-import 'forget_password_page.dart';
+import 'package:demeter/components/common/custom_form_button.dart';
+import 'package:demeter/components/common/custom_input_field.dart';
+import 'package:demeter/components/common/page_header.dart';
+import 'package:demeter/components/common/page_heading.dart';
+import 'package:demeter/services/auth_services.dart';
+import 'package:demeter/utils/helper_functions.dart';
+import 'package:demeter/pages/forget_password_page.dart';
+import 'package:demeter/pages/profile_page.dart';
 import 'home_page.dart';
-import 'signup_page.dart';
+import 'package:demeter/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -141,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
     // login user
     if (_loginFormKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Submitting data...')),
+        const SnackBar(content: Text('Query user data...')),
       );
 
       showDialog(
@@ -155,8 +156,10 @@ class _LoginPageState extends State<LoginPage> {
         if (user != null) {
           if (!context.mounted) return;
           Navigator.of(context).pop();
+          // Navigator.pushReplacement(context,
+          //     MaterialPageRoute(builder: (context)=>HomePage()));
           Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context)=>HomePage()));
+              MaterialPageRoute(builder: (context)=>HomePage()));
             // MaterialPageRoute(builder: (context)=>ProfilePage(user: userCredential.user)));
         }
       } on FirebaseAuthException catch(e) {

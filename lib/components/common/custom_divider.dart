@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import 'package:demeter/utils/constants.dart';
 
 /*
 This class creates a divider with custom label and it looks like following:
