@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCgK4fVGH-nVgvh2pzB7CvoIT9o0aiPxko',
-    appId: '1:174841766591:android:fe103e7279f4a31abe1c0a',
+    appId: '1:174841766591:android:11c7fe0588e36c3abe1c0a',
     messagingSenderId: '174841766591',
     projectId: 'innoxdev',
     storageBucket: 'innoxdev.appspot.com',
@@ -63,21 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyD11lZgsijZD-dPEi4LNItIOm9OemsiTWI',
-    appId: '1:174841766591:ios:f5c4ec822d40f42abe1c0a',
+    appId: '1:174841766591:ios:c215209ce140b95dbe1c0a',
     messagingSenderId: '174841766591',
     projectId: 'innoxdev',
     storageBucket: 'innoxdev.appspot.com',
-    iosClientId: '174841766591-2pknm9hqg4o0umh2c15ar53ipiaps73s.apps.googleusercontent.com',
+    iosClientId: '174841766591-1rptmvfc8t7q7bnaabon48pd9bpbhirj.apps.googleusercontent.com',
     iosBundleId: 'dev.innox.demeter',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyD11lZgsijZD-dPEi4LNItIOm9OemsiTWI',
-    appId: '1:174841766591:ios:8e124d46265922d1be1c0a',
+    appId: '1:174841766591:ios:15bce202e5172dd2be1c0a',
     messagingSenderId: '174841766591',
     projectId: 'innoxdev',
     storageBucket: 'innoxdev.appspot.com',
-    iosClientId: '174841766591-4bfcnatum0vf4140k8jh5gj3ibpig717.apps.googleusercontent.com',
+    iosClientId: '174841766591-h67fpc59thim1dgtsf71sj2ou1t19nog.apps.googleusercontent.com',
     iosBundleId: 'dev.innox.demeter.RunnerTests',
   );
 }
