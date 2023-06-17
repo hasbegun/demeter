@@ -1,3 +1,4 @@
+import 'package:demeter/pages/proxy_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -29,7 +30,8 @@ class demeter extends StatelessWidget {
           fontFamily: 'Montserrat',
         ),
       ),
-      home: const LoginPage(),
+      // home: const LoginPage(),
+      home: const ProxyPage(),
     );
   }
 }
